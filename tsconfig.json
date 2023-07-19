@@ -8,5 +8,5 @@
     "sourceMap": true,
     "resolveJsonModule": true,
   },
-  "include": ["src/**/*"],
+  // "include": ["src/**/*", "Repository/IRepository.ts"],
 }

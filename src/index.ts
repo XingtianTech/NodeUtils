@@ -1,1 +1,0 @@
-export {IRepository} from './lib/IRepository'

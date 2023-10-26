@@ -2,7 +2,7 @@ import { BSON, Collection} from "mongodb";
 import z from "zod";
 import {Mongodb} from './Mongo'
 
-export default class MongoRepository<T extends  BSON.Document>
+export class MongoRepository<T extends  BSON.Document>
 {
     public collection: Collection<T>;
     private changeSchema;

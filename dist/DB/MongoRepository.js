@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MongoRepository = void 0;
 class MongoRepository {
     constructor(collectionName, schema, db) {
         this.schema = schema;
@@ -30,4 +31,4 @@ class MongoRepository {
         // return user;
     }
 }
-exports.default = MongoRepository;
+exports.MongoRepository = MongoRepository;

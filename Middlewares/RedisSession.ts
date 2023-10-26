@@ -6,18 +6,20 @@ const redisClient = createClient()
 redisClient.connect().catch(console.error)
 
 
-let redisStore = new RedisStore({
-    client: redisClient,
-    // disableTouch:true,
-    prefix: "xingtian",
-  })
+// let redisStore = new RedisStore({
+//     client: redisClient,
+//     // disableTouch:true,
+//     prefix: "xingtian",
+//   })
   
-  export const RedisSession = session({
-      store: redisStore,
-      secret: 'lushuangxia',
+  export const RedisSession = ({prefix,secret,name}:any)=>
+  {
+    return session({
+      store: new RedisStore({ client: redisClient,  prefix: prefix, }) ,
+      secret: secret,
       saveUninitialized: false,
       resave: false,
-      name: 'sessionId',
+      name: name,
       cookie: {
         secure: false, // if true: only transmit cookie over https, in prod, always activate this
         httpOnly: true, // if true: prevents client side JS from reading the cookie
@@ -28,3 +30,4 @@ let redisStore = new RedisStore({
         sameSite: 'lax',
       },  
     });
+  } 

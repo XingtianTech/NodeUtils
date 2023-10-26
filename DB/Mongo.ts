@@ -2,7 +2,7 @@ import { Db, MongoClient } from "mongodb";
 // import { singleton } from "tsyringe";
 
 // @singleton()
-export default class Mongodb
+export class Mongodb
 {
     client:MongoClient;
     private _db: Db;

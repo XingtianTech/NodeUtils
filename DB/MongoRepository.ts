@@ -1,4 +1,4 @@
-import { BSON, Collection} from "mongodb";
+import { BSON, Collection, Filter} from "mongodb";
 import z from "zod";
 import {Mongodb} from './Mongo'
 
@@ -12,6 +12,11 @@ export class MongoRepository<T extends  BSON.Document>
         this.collection = db.db.collection<T>(collectionName);
     }
 
+    async FindOne (input:Filter<T>) {
+        return await this.collection.findOne<T>(input);
+      }
+
+
     async GetOrCreate(input:Partial<T>):Promise<T>
     {
         let item = await this.collection.findOne<T>({_id:input._id});
@@ -19,7 +24,7 @@ export class MongoRepository<T extends  BSON.Document>
         return item;
     }
 
-    async InsertItem(item:Partial<T>):Promise<T>
+    async InsertItem(item:Partial<T>):Promise<T> 
     {
         let verified : any= this.schema.safeParse(item);
         if(!verified.success) throw verified.error;
@@ -39,4 +44,6 @@ export class MongoRepository<T extends  BSON.Document>
         // Object.assign(user,changed);
         // return user;
     }
+
+    
 }

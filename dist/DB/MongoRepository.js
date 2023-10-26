@@ -7,6 +7,9 @@ class MongoRepository {
         this.changeSchema = this.schema.partial();
         this.collection = db.db.collection(collectionName);
     }
+    async FindOne(input) {
+        return await this.collection.findOne(input);
+    }
     async GetOrCreate(input) {
         let item = await this.collection.findOne({ _id: input._id });
         if (!item)

@@ -21,6 +21,7 @@
   "dependencies": {
     "connect-redis": "^7.1.0",
     "express-session": "^1.17.3",
+    "mongodb": "^6.2.0",
     "redis": "^4.6.10"
   }
 }

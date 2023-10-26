@@ -12,7 +12,7 @@ let redisStore = new RedisStore({
     prefix: "xingtian",
   })
   
-  export const redisSession = session({
+  export const RedisSession = session({
       store: redisStore,
       secret: 'lushuangxia',
       saveUninitialized: false,

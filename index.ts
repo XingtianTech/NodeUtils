@@ -1,5 +1,1 @@
-import {redisSession}from "./Middlewares/RedisSession"
-
-
-
-export const RedisSession = redisSession;
+export {RedisSession}from "./Middlewares/RedisSession"

@@ -2,8 +2,9 @@
   "name": "nodeutils",
   "version": "1.0.0",
   "description": "node utils",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "@types/express-session": "^1.17.9",
     "express": "^4.18.2",
     "typescript": "^5.1.6"
   },

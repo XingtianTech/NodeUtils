@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": false,
-    "emitDecoratorMetadata": false,
     "target": "es2020",
     "module": "NodeNext",                                /* Specify what module code is generated. */
-    "moduleResolution": "NodeNext",
-    "sourceMap": true,
-    "resolveJsonModule": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true
   },
   // "include": ["src/**/*", "Repository/IRepository.ts"],
 }

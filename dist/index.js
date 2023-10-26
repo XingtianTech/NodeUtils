@@ -22,3 +22,4 @@ Object.defineProperty(exports, "Mongodb", { enumerable: true, get: function () {
 var MongoRepository_1 = require("./DB/MongoRepository");
 Object.defineProperty(exports, "MongoRepository", { enumerable: true, get: function () { return MongoRepository_1.MongoRepository; } });
 __exportStar(require("./DB/MongoDocSchema"), exports);
+__exportStar(require("./Middlewares/RequestJsonHandler"), exports);

@@ -6,7 +6,7 @@ export class MongoRepository<T extends  BSON.Document>
 {
     public collection: Collection<T>;
     private changeSchema;
-    constructor(collectionName:string,private schema:z.AnyZodObject, db :Mongodb)
+    constructor(collectionName:string,private schema:z.AnyZodObject, private db :Mongodb)
     {
         this.changeSchema = this.schema.partial();
         this.collection = db.db.collection<T>(collectionName);

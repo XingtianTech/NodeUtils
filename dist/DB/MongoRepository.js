@@ -4,7 +4,6 @@ exports.MongoRepository = void 0;
 class MongoRepository {
     constructor(collectionName, schema, db) {
         this.schema = schema;
-        this.db = db;
         this.changeSchema = this.schema.partial();
         this.collection = db.db.collection(collectionName);
     }

@@ -7,7 +7,7 @@ function default_1(err, req, res, next) {
     }
     else if (typeof err === 'object') {
         const { status = 500 } = err;
-        console.dir("Error object:", err);
+        console.log("Error object1111:", err);
         res.status(status).json(err);
     }
 }

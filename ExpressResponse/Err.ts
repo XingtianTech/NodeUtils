@@ -7,7 +7,7 @@ export default function (err: any, req: Request, res: Response, next: NextFuncti
     }else if(typeof err === 'object')
     {
         const {status = 500} = err;
-        console.dir("Error object:",err)
+        console.log("Error object1111:",err)
         res.status(status).json(err);
     }
 }

@@ -20,7 +20,7 @@ class DBCollection {
         const verified = await this.schema.parseAsync(item);
         // if(!verified.success) throw verified.error;
         const inserted = await this.collection.insertOne(verified);
-        return { ...verified.data, _id: inserted.insertedId };
+        return { ...verified, _id: inserted.insertedId };
     }
     async Update(item, { ...changes }) {
         console.log("MongoRepository Update : changes : ", changes);

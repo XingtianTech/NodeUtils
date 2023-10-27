@@ -6,8 +6,8 @@ export default function (err: any, req: Request, res: Response, next: NextFuncti
         res.status(500).json({error:err});
     }else if(typeof err === 'object')
     {
-        const {status = 500} = err;
+        const {status = 500,message} = err;
         console.log("Error object1111:",err)
-        res.status(status).json(err);
+        res.status(status).json({error:err});
     }
 }

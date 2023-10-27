@@ -26,9 +26,9 @@ export class DBCollection<T extends  BSON.Document>
 
     async InsertItem(item:Partial<T>):Promise<T> 
     {
-        let verified : any= this.schema.safeParse(item);
-        if(!verified.success) throw verified.error;
-        const inserted = await this.collection.insertOne(verified.data);
+        const verified:any = await this.schema.parseAsync(item);
+        // if(!verified.success) throw verified.error;
+        const inserted = await this.collection.insertOne(verified);
         return {...verified.data,_id:inserted.insertedId}
     }
 

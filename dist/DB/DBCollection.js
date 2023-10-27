@@ -17,10 +17,9 @@ class DBCollection {
         return item;
     }
     async InsertItem(item) {
-        let verified = this.schema.safeParse(item);
-        if (!verified.success)
-            throw verified.error;
-        const inserted = await this.collection.insertOne(verified.data);
+        const verified = await this.schema.parseAsync(item);
+        // if(!verified.success) throw verified.error;
+        const inserted = await this.collection.insertOne(verified);
         return { ...verified.data, _id: inserted.insertedId };
     }
     async Update(item, { ...changes }) {

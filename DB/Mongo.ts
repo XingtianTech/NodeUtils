@@ -18,17 +18,17 @@ export class Mongodb
         return this.client.connect(); 
     }
     
-    static ToArrayQuery<T>(id:string,property:string,item:T)
-    {
-        let result:any = {_id:id}
-        for(var kv in item)
-        {
-            result[property+"."+kv] = item[kv];
-        }
-        return result;
-    }
-    static GetArrayFilter(property:string)
-    {
-        return {_id:0,[property+".$"]:1}
-    }
+    // static ToArrayQuery<T>(id:string,property:string,item:T)
+    // {
+    //     let result:any = {_id:id}
+    //     for(var kv in item)
+    //     {
+    //         result[property+"."+kv] = item[kv];
+    //     }
+    //     return result;
+    // }
+    // static GetArrayFilter(property:string)
+    // {
+    //     return {_id:0,[property+".$"]:1}
+    // }
 }

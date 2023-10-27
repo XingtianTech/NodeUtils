@@ -14,15 +14,5 @@ class Mongodb {
     connect() {
         return this.client.connect();
     }
-    static ToArrayQuery(id, property, item) {
-        let result = { _id: id };
-        for (var kv in item) {
-            result[property + "." + kv] = item[kv];
-        }
-        return result;
-    }
-    static GetArrayFilter(property) {
-        return { _id: 0, [property + ".$"]: 1 };
-    }
 }
 exports.Mongodb = Mongodb;

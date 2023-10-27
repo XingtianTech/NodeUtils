@@ -14,13 +14,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MongoRepository = exports.Mongodb = exports.RedisSession = void 0;
-var RedisSession_1 = require("./Middlewares/RedisSession");
-Object.defineProperty(exports, "RedisSession", { enumerable: true, get: function () { return RedisSession_1.RedisSession; } });
-var Mongo_1 = require("./DB/Mongo");
-Object.defineProperty(exports, "Mongodb", { enumerable: true, get: function () { return Mongo_1.Mongodb; } });
-var MongoRepository_1 = require("./DB/MongoRepository");
-Object.defineProperty(exports, "MongoRepository", { enumerable: true, get: function () { return MongoRepository_1.MongoRepository; } });
+__exportStar(require("./Middlewares/RedisSession"), exports);
+__exportStar(require("./DB/Mongo"), exports);
+__exportStar(require("./DB/DBCollection"), exports);
 __exportStar(require("./DB/MongoDocSchema"), exports);
 __exportStar(require("./Middlewares/RequestJsonHandler"), exports);
 __exportStar(require("./ExpressResponse"), exports);

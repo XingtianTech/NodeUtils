@@ -11,7 +11,7 @@ exports.Id = Object.freeze({
     isValidId: cuid2_1.isCuid
 });
 exports.MongoDocSchema = zod_1.default.object({
-    _id: zod_1.default.string().cuid().default(() => exports.Id.makeId())
+    _id: zod_1.default.string().cuid2().default(() => exports.Id.makeId())
 });
 // export type MongoDoc = z.infer<typeof MongoDocSchema>
 // export default Id

@@ -6,7 +6,7 @@ export const Id = Object.freeze({
   isValidId: isCuid
 })
 export const MongoDocSchema = z.object({
-  _id:z.string().cuid().default(()=>Id.makeId())
+  _id:z.string().cuid2().default(()=>Id.makeId())
 })
 // export type MongoDoc = z.infer<typeof MongoDocSchema>
 

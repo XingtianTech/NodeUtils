@@ -8,6 +8,6 @@ export default function (err: any, req: Request, res: Response, next: NextFuncti
     {
         const {status = 500,message} = err;
         console.log("Error object1111:",err)
-        res.status(status).json({error:err});
+        res.status(status).json({error:message});
     }
 }

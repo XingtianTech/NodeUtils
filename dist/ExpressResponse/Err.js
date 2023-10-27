@@ -8,7 +8,7 @@ function default_1(err, req, res, next) {
     else if (typeof err === 'object') {
         const { status = 500, message } = err;
         console.log("Error object1111:", err);
-        res.status(status).json({ error: err });
+        res.status(status).json({ error: message });
     }
 }
 exports.default = default_1;
